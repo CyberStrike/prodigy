@@ -1,0 +1,57 @@
+$not-quite-white: #f7f7f7
+$font-size-base: 16px
+
+@import "bootstrap-sprockets", "bootstrap"
+
+html
+  font-size: 16px
+  body
+    background-color: $not-quite-white
+
+a
+  .glyphicon.glyphicon-chevron-right
+    padding-left: 10px
+  .glyphicon.glyphicon-chevron-left
+    padding-right: 10px
+
+//.pagination
+//  li
+//    a
+//      width: 150px
+
+.navbar-prodigy
+  @extend .navbar-default
+  border: none
+  .navbar-brand-prodigy
+    @extend .navbar-brand
+    float: none
+    line-height: inherit
+    margin-left: 16px // Compensating for Nav Toggle
+
+.event-card-container
+  @extend .col-lg-6
+  @extend .col-lg-push-3
+  padding: 0.5em
+  a
+    color: inherit
+    text-decoration: none
+    &:hover, &:focus
+      text-decoration: none
+
+.event-card
+  padding: .5em
+  padding-left: 1em
+  margin: .5em
+  color: whitesmoke
+  .title
+    font-size: 1.5em
+
+.site-footer
+  position: relative
+  margin-top: 40px
+  padding-top: 40px
+  padding-bottom: 40px
+  font-size: 12px
+  line-height: 1.5
+  color: #777
+  border-top: 1px solid #eee
