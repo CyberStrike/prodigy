@@ -1,0 +1,29 @@
+html lang='en'
+
+  meta charset="utf-8"
+  meta content="IE=edge" http-equiv="X-UA-Compatible"
+  meta content="width=device-width, initial-scale=1" name="viewport"
+  meta content="A simple app to keep track of Student Projects" name="description"
+  meta content="Chris Scott" name="author"
+
+  head
+    title
+      - if content_for? :title
+        = yield :title
+      - else
+        | Prodigy
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+
+    = csrf_meta_tags
+
+  body id=params[:controller] class=params[:action]
+    = render 'partial/nav'
+
+    .container
+      - unless flash.empty?
+        .text-center
+          .notice.text-info = notice
+          .alert.text-danger = alert
+      = yield
